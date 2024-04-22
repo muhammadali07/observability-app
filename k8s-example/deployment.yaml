@@ -1,0 +1,33 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo-go-app-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: echo-go-app-app
+  template:
+    metadata:
+      labels:
+        app: echo-go-app-app
+    spec:
+      containers:
+      - name: echo-go-app-app
+        image: muhalibakhtiar/golang-test:latest
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: echo-go-app-service
+spec:
+  selector:
+    app: echo-go-app-app
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: LoadBalancer
