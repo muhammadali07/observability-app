@@ -4,7 +4,7 @@ set -x
 
 # setup default values, use environment variables to override
 # export VER=v1 APP_DIR=myapp && ./build.sh
-USERNAMR="${USERNAMR:-aputra}"
+USERNAMR="${USERNAMR:-muhalibakhtiar}"
 VER="${VER:-latest}"
 LESSON=$(basename $(pwd))
 APP_DIR="${APP_DIR:-0}"
