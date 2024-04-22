@@ -1,5 +1,6 @@
 # observability-app
 
+step by step : 
 git cloning repository
 cd observability-app
 cd terraform
