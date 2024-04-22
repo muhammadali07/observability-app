@@ -28,8 +28,10 @@ var (
 func init() {
 	otlpEndpoint = os.Getenv("OTLP_ENDPOINT")
 	if otlpEndpoint == "" {
-		log.Fatalln("You MUST set OTLP_ENDPOINT env variable!")
+		// log.Fatalln("You MUST set OTLP_ENDPOINT env variable!")
+		otlpEndpoint = "localhost:4318 "
 	}
+
 }
 
 // List of supported exporters
